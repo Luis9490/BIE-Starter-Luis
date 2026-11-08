@@ -20,7 +20,7 @@ public class LearnerE2ETests : BrowserTestBase
             return element.Displayed ? element : null;
         });
 
-        Assert.IsTrue(result.Text.Contains("GENEHMIGT"));
+        StringAssert.Contains(result.Text, "GENEHMIGT");
 
         var caseId = Driver.FindElement(By.Id("result")).GetDomAttribute("data-application-id");
 
